@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Translate</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+        <h1 id="textLogo">Translator</h1>
+        <div class="functionBlock">
+            <form method="post" action="{% url 'translate' %}">
+                {% csrf_token %}
+                <textarea name="inputText" id="inputText" placeholder="enter text">{{text}}</textarea>
+                    <select name="selectLang" id="selectLangList">
+                        {% for index, lang in languages.items %}
+                            <option value="{{index}}">{{lang}}</option>
+                        {% endfor %}    
+                    </select>
+                <button type="submit" id="btnTranslate">translate</button>   
+            </form>
+            <textarea id="outputText" placeholder="translated text">{{result}}</textarea>     
+        </div>   
+    </body>
+</html>
