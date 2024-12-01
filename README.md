@@ -2,4 +2,4 @@
 
 A translator site built on django.
 
-![](screenPhoto.png)
+[!](screenPhoto.png)
