@@ -8,6 +8,8 @@
     </head>
     <body>
         <h1 id="textLogo">Translator</h1>
+        <p id="langsDescription">supported languages:</p>
+        <marquee id="langList" scrollamount="15">{{languages.values|join:' | '}}</marquee>
         <div class="functionBlock">
             <form method="post" action="{% url 'translate' %}">
                 {% csrf_token %}
