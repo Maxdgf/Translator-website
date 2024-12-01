@@ -2,7 +2,7 @@ from django.shortcuts import render
 from mainApp.langs import LANGUAGES
 from googletrans import Translator
 
-def show_app_page(request):
+def show_app_page(request):  
     return render(request, 'page.html', {"languages": LANGUAGES})
 
 
